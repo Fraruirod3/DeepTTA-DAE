@@ -1,0 +1,10 @@
+# Pesos de modelos entrenados (demasiado pesados para GitHub)
+*.pt
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Carpeta de archivo (material del TFG y versiones intermedias, no se sube)
+archivado/

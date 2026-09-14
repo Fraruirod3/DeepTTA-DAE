@@ -1,0 +1,562 @@
+======================================================================
+EXPERIMENTO: exp_MLP_Random95_ReduceLROnPlateau_20260509_142114
+Descripción: MLP 100k Random95 - Replica paper original
+Modelo:      MLP
+Dispositivo: cuda
+Carpeta:     /mnt/frareuirod3/DeepTTA-TFG/Experimentos/exp_MLP_Random95_ReduceLROnPlateau_20260509_142114
+======================================================================
+📁 Ruta de datos configurada en: /mnt/frareuirod3/DeepTTA-TFG
+##################################################
+#	 使用的药物有：198
+#	 其中最少的药物对应44个细胞系，
+	 最多的对应808个细胞系，
+	 平均对应683.040404040404个细胞系
+##################################################
+#	 使用的细胞系有：809
+#	 其中最少的细胞系对应14个药物，
+	 最多的对应196个药物，
+	 平均对应167.17181705809642个药物
+##################################################
+#	 癌症类型一共有：31
+#	 其中最少的癌症类型对应179个药物，
+	 最多的对应25743个药物，
+	 平均对应4359.354838709677个药物
+##################################################
+step1 过滤细胞系....
+在检查细胞系rna 表达矩阵的时候发现4个细胞系没有表达记录
+(135242, 19)
+(134728, 19)
+step2 过滤药物....
+对于部分Drug没有记录PuchemID，得不到smile
+(134728, 19)
+(103492, 19)
+##################################################
+#	 使用的药物有：154
+#	 其中最少的药物对应43个细胞系，
+	 最多的对应804个细胞系，
+	 平均对应672.025974025974个细胞系
+##################################################
+#	 使用的细胞系有：805
+#	 其中最少的细胞系对应14个药物，
+	 最多的对应153个药物，
+	 平均对应128.5614906832298个药物
+##################################################
+#	 癌症类型一共有：31
+#	 其中最少的癌症类型对应137个药物，
+	 最多的对应19554个药物，
+	 平均对应3335.2580645161293个药物
+##################################################
+#	 Split 95/5 aleatorio (paper original)
+#	 Datos totales: 103492
+#	 Entrenamiento: 98317
+#	 Test: 5175
+
+Datos:
+  Split:  Random95
+  Train:  98317 muestras
+  Test:   5175 muestras
+  Genes:  17737
+
+Config guardada en: /mnt/frareuirod3/DeepTTA-TFG/Experimentos/exp_MLP_Random95_ReduceLROnPlateau_20260509_142114/config.json
+======================================================================
+ENTRENAMIENTO: MLP | Random95 | scheduler=ReduceLROnPlateau
+======================================================================
+  Epoch 1 | iter 0 | loss 15.84702 | 0.000h
+  Epoch 1 | iter 1000 | loss 1.95424 | 0.007h
+
+  MEJOR (epoch 1): MSE=1.8573 | Pearson=0.8825 | LR=1.00e-04
+
+  Epoch 2 | iter 0 | loss 2.26875 | 0.011h
+  Epoch 2 | iter 1000 | loss 1.79345 | 0.018h
+
+  MEJOR (epoch 2): MSE=1.5744 | Pearson=0.8947 | LR=1.00e-04
+
+  Epoch 3 | iter 0 | loss 1.60014 | 0.023h
+  Epoch 3 | iter 1000 | loss 1.73815 | 0.030h
+
+  MEJOR (epoch 3): MSE=1.4900 | Pearson=0.9010 | LR=1.00e-04
+
+  Epoch 4 | iter 0 | loss 1.85786 | 0.034h
+  Epoch 4 | iter 1000 | loss 1.33474 | 0.041h
+  Epoch 5 | iter 0 | loss 2.30179 | 0.045h
+  Epoch 5 | iter 1000 | loss 2.23868 | 0.052h
+
+  MEJOR (epoch 5): MSE=1.4345 | Pearson=0.9060 | LR=1.00e-04
+
+  Epoch 6 | iter 0 | loss 0.93657 | 0.057h
+  Epoch 6 | iter 1000 | loss 1.74393 | 0.064h
+  Epoch 7 | iter 0 | loss 2.24938 | 0.068h
+  Epoch 7 | iter 1000 | loss 1.57376 | 0.075h
+
+  MEJOR (epoch 7): MSE=1.3749 | Pearson=0.9089 | LR=1.00e-04
+
+  Epoch 8 | iter 0 | loss 1.17055 | 0.079h
+  Epoch 8 | iter 1000 | loss 1.89169 | 0.086h
+  Epoch 9 | iter 0 | loss 1.50420 | 0.090h
+  Epoch 9 | iter 1000 | loss 0.96590 | 0.097h
+  Epoch 10 | iter 0 | loss 1.66637 | 0.102h
+  Epoch 10 | iter 1000 | loss 1.33424 | 0.109h
+
+  MEJOR (epoch 10): MSE=1.3554 | Pearson=0.9143 | LR=1.00e-04
+
+  Epoch 11 | iter 0 | loss 1.90553 | 0.113h
+  Epoch 11 | iter 1000 | loss 2.66974 | 0.120h
+  Epoch 12 | iter 0 | loss 1.02401 | 0.124h
+  Epoch 12 | iter 1000 | loss 1.50828 | 0.131h
+  Epoch 13 | iter 0 | loss 1.46718 | 0.136h
+  Epoch 13 | iter 1000 | loss 2.23316 | 0.143h
+
+  MEJOR (epoch 13): MSE=1.3316 | Pearson=0.9158 | LR=1.00e-04
+
+  Epoch 14 | iter 0 | loss 0.94373 | 0.147h
+  Epoch 14 | iter 1000 | loss 1.96500 | 0.155h
+
+  MEJOR (epoch 14): MSE=1.2749 | Pearson=0.9173 | LR=1.00e-04
+
+  Epoch 15 | iter 0 | loss 1.45595 | 0.159h
+  Epoch 15 | iter 1000 | loss 0.97836 | 0.166h
+  Epoch 16 | iter 0 | loss 1.67641 | 0.170h
+  Epoch 16 | iter 1000 | loss 0.92018 | 0.177h
+  Epoch 17 | iter 0 | loss 1.12578 | 0.181h
+  Epoch 17 | iter 1000 | loss 1.98736 | 0.188h
+
+  MEJOR (epoch 17): MSE=1.2099 | Pearson=0.9200 | LR=1.00e-04
+
+  Epoch 18 | iter 0 | loss 1.00612 | 0.192h
+  Epoch 18 | iter 1000 | loss 1.26644 | 0.199h
+  Epoch 19 | iter 0 | loss 0.91176 | 0.203h
+  Epoch 19 | iter 1000 | loss 1.71292 | 0.210h
+  Epoch 20 | iter 0 | loss 1.83988 | 0.214h
+  Epoch 20 | iter 1000 | loss 1.58779 | 0.221h
+  Epoch 21 | iter 0 | loss 1.27455 | 0.225h
+  Epoch 21 | iter 1000 | loss 0.93099 | 0.232h
+  Epoch 22 | iter 0 | loss 1.24069 | 0.236h
+  Epoch 22 | iter 1000 | loss 1.52888 | 0.243h
+  Epoch 23 | iter 0 | loss 1.56366 | 0.247h
+  Epoch 23 | iter 1000 | loss 0.81948 | 0.254h
+
+  MEJOR (epoch 23): MSE=1.1793 | Pearson=0.9221 | LR=1.00e-04
+
+  Epoch 24 | iter 0 | loss 1.09880 | 0.258h
+  Epoch 24 | iter 1000 | loss 1.40141 | 0.266h
+  Epoch 25 | iter 0 | loss 1.81342 | 0.270h
+  Epoch 25 | iter 1000 | loss 1.96024 | 0.277h
+
+  MEJOR (epoch 25): MSE=1.1792 | Pearson=0.9227 | LR=1.00e-04
+
+  Epoch 26 | iter 0 | loss 1.25980 | 0.281h
+  Epoch 26 | iter 1000 | loss 1.90375 | 0.288h
+
+  MEJOR (epoch 26): MSE=1.1399 | Pearson=0.9257 | LR=1.00e-04
+
+  Epoch 27 | iter 0 | loss 1.18541 | 0.292h
+  Epoch 27 | iter 1000 | loss 1.39797 | 0.299h
+  Epoch 28 | iter 0 | loss 0.83215 | 0.303h
+  Epoch 28 | iter 1000 | loss 1.09107 | 0.310h
+
+  MEJOR (epoch 28): MSE=1.1188 | Pearson=0.9259 | LR=1.00e-04
+
+  Epoch 29 | iter 0 | loss 0.88924 | 0.314h
+  Epoch 29 | iter 1000 | loss 1.04656 | 0.321h
+  Epoch 30 | iter 0 | loss 1.47971 | 0.325h
+  Epoch 30 | iter 1000 | loss 1.32070 | 0.332h
+  Epoch 31 | iter 0 | loss 1.11969 | 0.336h
+  Epoch 31 | iter 1000 | loss 0.67460 | 0.344h
+
+  MEJOR (epoch 31): MSE=1.0877 | Pearson=0.9280 | LR=1.00e-04
+
+  Epoch 32 | iter 0 | loss 1.15697 | 0.348h
+  Epoch 32 | iter 1000 | loss 0.98107 | 0.354h
+  Epoch 33 | iter 0 | loss 0.88658 | 0.359h
+  Epoch 33 | iter 1000 | loss 1.42627 | 0.366h
+  Epoch 34 | iter 0 | loss 0.91143 | 0.370h
+  Epoch 34 | iter 1000 | loss 0.87325 | 0.377h
+  Epoch 35 | iter 0 | loss 1.58781 | 0.381h
+  Epoch 35 | iter 1000 | loss 1.09513 | 0.388h
+  Epoch 36 | iter 0 | loss 0.71996 | 0.392h
+  Epoch 36 | iter 1000 | loss 0.97458 | 0.399h
+  Epoch 37 | iter 0 | loss 0.60008 | 0.403h
+  Epoch 37 | iter 1000 | loss 1.22955 | 0.410h
+  Epoch 38 | iter 0 | loss 1.44168 | 0.414h
+  Epoch 38 | iter 1000 | loss 0.95346 | 0.421h
+  Epoch 39 | iter 0 | loss 1.33265 | 0.426h
+  Epoch 39 | iter 1000 | loss 1.38851 | 0.433h
+
+  MEJOR (epoch 39): MSE=1.0734 | Pearson=0.9302 | LR=1.00e-04
+
+  Epoch 40 | iter 0 | loss 0.86052 | 0.437h
+  Epoch 40 | iter 1000 | loss 0.85178 | 0.444h
+
+  MEJOR (epoch 40): MSE=1.0636 | Pearson=0.9302 | LR=1.00e-04
+
+  Epoch 41 | iter 0 | loss 0.87961 | 0.448h
+  Epoch 41 | iter 1000 | loss 1.17842 | 0.455h
+  Epoch 42 | iter 0 | loss 0.86501 | 0.459h
+  Epoch 42 | iter 1000 | loss 0.87132 | 0.466h
+
+  MEJOR (epoch 42): MSE=1.0460 | Pearson=0.9315 | LR=1.00e-04
+
+  Epoch 43 | iter 0 | loss 0.60830 | 0.470h
+  Epoch 43 | iter 1000 | loss 1.04969 | 0.478h
+  Epoch 44 | iter 0 | loss 1.15717 | 0.482h
+  Epoch 44 | iter 1000 | loss 1.19258 | 0.489h
+  Epoch 45 | iter 0 | loss 2.16005 | 0.493h
+  Epoch 45 | iter 1000 | loss 0.84733 | 0.500h
+
+  MEJOR (epoch 45): MSE=1.0237 | Pearson=0.9327 | LR=1.00e-04
+
+  Epoch 46 | iter 0 | loss 0.90765 | 0.504h
+  Epoch 46 | iter 1000 | loss 0.64521 | 0.511h
+  Epoch 47 | iter 0 | loss 1.13911 | 0.515h
+  Epoch 47 | iter 1000 | loss 0.86607 | 0.522h
+  Epoch 48 | iter 0 | loss 0.76387 | 0.526h
+  Epoch 48 | iter 1000 | loss 0.86626 | 0.533h
+  Epoch 49 | iter 0 | loss 0.76239 | 0.537h
+  Epoch 49 | iter 1000 | loss 0.80058 | 0.544h
+  Epoch 50 | iter 0 | loss 0.89673 | 0.548h
+  Epoch 50 | iter 1000 | loss 1.54834 | 0.555h
+  Epoch 51 | iter 0 | loss 0.85584 | 0.559h
+  Epoch 51 | iter 1000 | loss 0.84270 | 0.566h
+  Epoch 52 | iter 0 | loss 0.90952 | 0.570h
+  Epoch 52 | iter 1000 | loss 1.12927 | 0.578h
+  Epoch 53 | iter 0 | loss 1.18620 | 0.582h
+  Epoch 53 | iter 1000 | loss 0.89589 | 0.589h
+  Epoch 54 | iter 0 | loss 0.99838 | 0.593h
+  Epoch 54 | iter 1000 | loss 1.18384 | 0.600h
+  Epoch 55 | iter 0 | loss 1.13007 | 0.604h
+  Epoch 55 | iter 1000 | loss 1.33597 | 0.612h
+  Epoch 56 | iter 0 | loss 1.36081 | 0.616h
+  Epoch 56 | iter 1000 | loss 0.60227 | 0.623h
+
+  MEJOR (epoch 56): MSE=1.0155 | Pearson=0.9335 | LR=1.00e-04
+
+  Epoch 57 | iter 0 | loss 0.82398 | 0.627h
+  Epoch 57 | iter 1000 | loss 0.79029 | 0.634h
+  Epoch 58 | iter 0 | loss 0.92387 | 0.638h
+  Epoch 58 | iter 1000 | loss 0.74977 | 0.645h
+
+  MEJOR (epoch 58): MSE=1.0086 | Pearson=0.9337 | LR=1.00e-04
+
+  Epoch 59 | iter 0 | loss 1.04122 | 0.649h
+  Epoch 59 | iter 1000 | loss 0.74775 | 0.656h
+  Epoch 60 | iter 0 | loss 0.72838 | 0.660h
+  Epoch 60 | iter 1000 | loss 0.88225 | 0.667h
+  Epoch 61 | iter 0 | loss 0.75147 | 0.671h
+  Epoch 61 | iter 1000 | loss 1.02990 | 0.678h
+  Epoch 62 | iter 0 | loss 0.74683 | 0.682h
+  Epoch 62 | iter 1000 | loss 1.20680 | 0.689h
+
+  MEJOR (epoch 62): MSE=0.9994 | Pearson=0.9352 | LR=1.00e-04
+
+  Epoch 63 | iter 0 | loss 0.69176 | 0.694h
+  Epoch 63 | iter 1000 | loss 0.48514 | 0.701h
+  Epoch 64 | iter 0 | loss 0.69769 | 0.705h
+  Epoch 64 | iter 1000 | loss 0.67853 | 0.712h
+  Epoch 65 | iter 0 | loss 0.71776 | 0.716h
+  Epoch 65 | iter 1000 | loss 0.87786 | 0.723h
+  Epoch 66 | iter 0 | loss 0.73702 | 0.727h
+  Epoch 66 | iter 1000 | loss 0.77388 | 0.734h
+  Epoch 67 | iter 0 | loss 1.19958 | 0.738h
+  Epoch 67 | iter 1000 | loss 0.64855 | 0.745h
+  Epoch 68 | iter 0 | loss 0.77342 | 0.749h
+  Epoch 68 | iter 1000 | loss 1.00885 | 0.756h
+  Epoch 69 | iter 0 | loss 1.13769 | 0.760h
+  Epoch 69 | iter 1000 | loss 0.84189 | 0.767h
+  Epoch 70 | iter 0 | loss 1.00962 | 0.771h
+  Epoch 70 | iter 1000 | loss 0.55057 | 0.779h
+
+  MEJOR (epoch 70): MSE=0.9880 | Pearson=0.9353 | LR=1.00e-04
+
+  Epoch 71 | iter 0 | loss 0.67800 | 0.783h
+  Epoch 71 | iter 1000 | loss 1.11084 | 0.790h
+
+  MEJOR (epoch 71): MSE=0.9873 | Pearson=0.9352 | LR=1.00e-04
+
+  Epoch 72 | iter 0 | loss 0.55483 | 0.794h
+  Epoch 72 | iter 1000 | loss 0.56875 | 0.801h
+  Epoch 73 | iter 0 | loss 0.67624 | 0.805h
+  Epoch 73 | iter 1000 | loss 0.86470 | 0.812h
+  Epoch 74 | iter 0 | loss 0.54022 | 0.816h
+  Epoch 74 | iter 1000 | loss 1.14747 | 0.823h
+
+  MEJOR (epoch 74): MSE=0.9672 | Pearson=0.9371 | LR=1.00e-04
+
+  Epoch 75 | iter 0 | loss 0.63059 | 0.827h
+  Epoch 75 | iter 1000 | loss 1.12174 | 0.834h
+  Epoch 76 | iter 0 | loss 0.69728 | 0.838h
+  Epoch 76 | iter 1000 | loss 0.62622 | 0.845h
+  Epoch 77 | iter 0 | loss 0.94896 | 0.849h
+  Epoch 77 | iter 1000 | loss 0.62102 | 0.857h
+  Epoch 78 | iter 0 | loss 0.91770 | 0.861h
+  Epoch 78 | iter 1000 | loss 0.73182 | 0.868h
+  Epoch 79 | iter 0 | loss 0.74953 | 0.872h
+  Epoch 79 | iter 1000 | loss 1.07275 | 0.879h
+  Epoch 80 | iter 0 | loss 0.60769 | 0.884h
+  Epoch 80 | iter 1000 | loss 0.74636 | 0.891h
+  Epoch 81 | iter 0 | loss 0.62055 | 0.895h
+  Epoch 81 | iter 1000 | loss 1.07953 | 0.902h
+  Epoch 82 | iter 0 | loss 0.59721 | 0.906h
+  Epoch 82 | iter 1000 | loss 1.20911 | 0.913h
+
+  MEJOR (epoch 82): MSE=0.9635 | Pearson=0.9372 | LR=1.00e-04
+
+  Epoch 83 | iter 0 | loss 0.52943 | 0.917h
+  Epoch 83 | iter 1000 | loss 0.37559 | 0.924h
+  Epoch 84 | iter 0 | loss 0.73010 | 0.928h
+  Epoch 84 | iter 1000 | loss 0.65157 | 0.936h
+  Epoch 85 | iter 0 | loss 0.51282 | 0.940h
+  Epoch 85 | iter 1000 | loss 0.51784 | 0.947h
+  Epoch 86 | iter 0 | loss 0.76863 | 0.951h
+  Epoch 86 | iter 1000 | loss 0.76979 | 0.958h
+  Epoch 87 | iter 0 | loss 0.51885 | 0.962h
+  Epoch 87 | iter 1000 | loss 1.27425 | 0.969h
+
+  MEJOR (epoch 87): MSE=0.9476 | Pearson=0.9383 | LR=1.00e-04
+
+  Epoch 88 | iter 0 | loss 0.44059 | 0.974h
+  Epoch 88 | iter 1000 | loss 0.63868 | 0.981h
+  Epoch 89 | iter 0 | loss 0.89579 | 0.985h
+  Epoch 89 | iter 1000 | loss 0.68366 | 0.992h
+  Epoch 90 | iter 0 | loss 0.85911 | 0.996h
+  Epoch 90 | iter 1000 | loss 0.46514 | 1.003h
+  Epoch 91 | iter 0 | loss 0.68005 | 1.007h
+  Epoch 91 | iter 1000 | loss 0.78217 | 1.014h
+  Epoch 92 | iter 0 | loss 0.49712 | 1.018h
+  Epoch 92 | iter 1000 | loss 0.81299 | 1.025h
+  Epoch 93 | iter 0 | loss 0.59982 | 1.029h
+  Epoch 93 | iter 1000 | loss 0.85903 | 1.036h
+
+  MEJOR (epoch 93): MSE=0.9437 | Pearson=0.9389 | LR=1.00e-04
+
+  Epoch 94 | iter 0 | loss 0.74004 | 1.041h
+  Epoch 94 | iter 1000 | loss 0.84453 | 1.048h
+  Epoch 95 | iter 0 | loss 0.71913 | 1.052h
+  Epoch 95 | iter 1000 | loss 1.08960 | 1.060h
+  Epoch 96 | iter 0 | loss 0.58071 | 1.064h
+  Epoch 96 | iter 1000 | loss 0.77750 | 1.071h
+  Epoch 97 | iter 0 | loss 0.80190 | 1.075h
+  Epoch 97 | iter 1000 | loss 0.79855 | 1.083h
+
+  MEJOR (epoch 97): MSE=0.9315 | Pearson=0.9390 | LR=1.00e-04
+
+  Epoch 98 | iter 0 | loss 0.44660 | 1.087h
+  Epoch 98 | iter 1000 | loss 0.70892 | 1.094h
+  Epoch 99 | iter 0 | loss 0.70866 | 1.098h
+  Epoch 99 | iter 1000 | loss 0.80153 | 1.105h
+  Epoch 100 | iter 0 | loss 0.48377 | 1.110h
+  Epoch 100 | iter 1000 | loss 0.50240 | 1.117h
+  Epoch 101 | iter 0 | loss 0.68915 | 1.121h
+  Epoch 101 | iter 1000 | loss 0.53725 | 1.128h
+  Epoch 102 | iter 0 | loss 0.52724 | 1.132h
+  Epoch 102 | iter 1000 | loss 0.42280 | 1.139h
+  Epoch 103 | iter 0 | loss 0.83835 | 1.143h
+  Epoch 103 | iter 1000 | loss 0.66829 | 1.150h
+  Epoch 104 | iter 0 | loss 0.69019 | 1.155h
+  Epoch 104 | iter 1000 | loss 0.67944 | 1.161h
+  Epoch 105 | iter 0 | loss 0.49668 | 1.165h
+  Epoch 105 | iter 1000 | loss 0.58905 | 1.172h
+  Epoch 106 | iter 0 | loss 0.48173 | 1.177h
+  Epoch 106 | iter 1000 | loss 1.01872 | 1.183h
+  Epoch 107 | iter 0 | loss 0.64053 | 1.188h
+  Epoch 107 | iter 1000 | loss 0.42826 | 1.195h
+  Epoch 108 | iter 0 | loss 0.39297 | 1.199h
+  Epoch 108 | iter 1000 | loss 0.37005 | 1.206h
+  Epoch 109 | iter 0 | loss 0.47750 | 1.210h
+  Epoch 109 | iter 1000 | loss 0.61679 | 1.217h
+
+  MEJOR (epoch 109): MSE=0.9310 | Pearson=0.9396 | LR=5.00e-05
+
+  Epoch 110 | iter 0 | loss 0.39791 | 1.221h
+  Epoch 110 | iter 1000 | loss 0.54107 | 1.228h
+
+  MEJOR (epoch 110): MSE=0.9027 | Pearson=0.9409 | LR=5.00e-05
+
+  Epoch 111 | iter 0 | loss 0.35631 | 1.232h
+  Epoch 111 | iter 1000 | loss 0.44078 | 1.240h
+  Epoch 112 | iter 0 | loss 0.48674 | 1.244h
+  Epoch 112 | iter 1000 | loss 0.46637 | 1.251h
+
+  MEJOR (epoch 112): MSE=0.8969 | Pearson=0.9416 | LR=5.00e-05
+
+  Epoch 113 | iter 0 | loss 0.51245 | 1.255h
+  Epoch 113 | iter 1000 | loss 0.62343 | 1.262h
+  Epoch 114 | iter 0 | loss 0.67280 | 1.266h
+  Epoch 114 | iter 1000 | loss 0.53014 | 1.273h
+  Epoch 115 | iter 0 | loss 0.42983 | 1.277h
+  Epoch 115 | iter 1000 | loss 0.44111 | 1.284h
+  Epoch 116 | iter 0 | loss 0.25470 | 1.288h
+  Epoch 116 | iter 1000 | loss 0.41669 | 1.295h
+  Epoch 117 | iter 0 | loss 0.32477 | 1.299h
+  Epoch 117 | iter 1000 | loss 0.52528 | 1.307h
+  Epoch 118 | iter 0 | loss 0.47746 | 1.311h
+  Epoch 118 | iter 1000 | loss 0.36479 | 1.318h
+  Epoch 119 | iter 0 | loss 0.39686 | 1.322h
+  Epoch 119 | iter 1000 | loss 0.43311 | 1.329h
+  Epoch 120 | iter 0 | loss 0.33973 | 1.333h
+  Epoch 120 | iter 1000 | loss 0.31717 | 1.340h
+  Epoch 121 | iter 0 | loss 0.28944 | 1.344h
+  Epoch 121 | iter 1000 | loss 0.44423 | 1.352h
+  Epoch 122 | iter 0 | loss 0.44113 | 1.356h
+  Epoch 122 | iter 1000 | loss 0.39594 | 1.363h
+  Epoch 123 | iter 0 | loss 0.49477 | 1.367h
+  Epoch 123 | iter 1000 | loss 0.55147 | 1.374h
+  Epoch 124 | iter 0 | loss 0.25718 | 1.378h
+  Epoch 124 | iter 1000 | loss 0.35940 | 1.385h
+  Epoch 125 | iter 0 | loss 0.44777 | 1.389h
+  Epoch 125 | iter 1000 | loss 0.41887 | 1.397h
+  Epoch 126 | iter 0 | loss 0.42496 | 1.401h
+  Epoch 126 | iter 1000 | loss 0.47365 | 1.408h
+  Epoch 127 | iter 0 | loss 0.50249 | 1.412h
+  Epoch 127 | iter 1000 | loss 0.46592 | 1.419h
+  Epoch 128 | iter 0 | loss 0.40637 | 1.423h
+  Epoch 128 | iter 1000 | loss 0.30680 | 1.430h
+  Epoch 129 | iter 0 | loss 0.39173 | 1.434h
+  Epoch 129 | iter 1000 | loss 0.46244 | 1.441h
+  Epoch 130 | iter 0 | loss 0.34323 | 1.446h
+  Epoch 130 | iter 1000 | loss 0.48845 | 1.453h
+  Epoch 131 | iter 0 | loss 0.35402 | 1.457h
+  Epoch 131 | iter 1000 | loss 0.30551 | 1.464h
+  Epoch 132 | iter 0 | loss 0.45248 | 1.468h
+  Epoch 132 | iter 1000 | loss 0.23319 | 1.475h
+  Epoch 133 | iter 0 | loss 0.32779 | 1.479h
+  Epoch 133 | iter 1000 | loss 0.26425 | 1.486h
+  Epoch 134 | iter 0 | loss 0.35950 | 1.490h
+  Epoch 134 | iter 1000 | loss 0.42966 | 1.497h
+  Epoch 135 | iter 0 | loss 0.34737 | 1.502h
+  Epoch 135 | iter 1000 | loss 0.31296 | 1.509h
+  Epoch 136 | iter 0 | loss 0.30768 | 1.513h
+  Epoch 136 | iter 1000 | loss 0.42081 | 1.520h
+  Epoch 137 | iter 0 | loss 0.38037 | 1.524h
+  Epoch 137 | iter 1000 | loss 0.36004 | 1.531h
+  Epoch 138 | iter 0 | loss 0.37397 | 1.536h
+  Epoch 138 | iter 1000 | loss 0.31629 | 1.543h
+  Epoch 139 | iter 0 | loss 0.36819 | 1.547h
+  Epoch 139 | iter 1000 | loss 0.21558 | 1.554h
+  Epoch 140 | iter 0 | loss 0.35498 | 1.558h
+  Epoch 140 | iter 1000 | loss 0.27489 | 1.565h
+  Epoch 141 | iter 0 | loss 0.34149 | 1.569h
+  Epoch 141 | iter 1000 | loss 0.33265 | 1.577h
+  Epoch 142 | iter 0 | loss 0.31243 | 1.581h
+  Epoch 142 | iter 1000 | loss 0.31953 | 1.588h
+  Epoch 143 | iter 0 | loss 0.24396 | 1.592h
+  Epoch 143 | iter 1000 | loss 0.33737 | 1.599h
+  Epoch 144 | iter 0 | loss 0.32509 | 1.603h
+  Epoch 144 | iter 1000 | loss 0.25603 | 1.610h
+  Epoch 145 | iter 0 | loss 0.24439 | 1.614h
+  Epoch 145 | iter 1000 | loss 0.27151 | 1.622h
+  Epoch 146 | iter 0 | loss 0.24131 | 1.626h
+  Epoch 146 | iter 1000 | loss 0.31361 | 1.633h
+  Epoch 147 | iter 0 | loss 0.27564 | 1.637h
+  Epoch 147 | iter 1000 | loss 0.34632 | 1.645h
+  Epoch 148 | iter 0 | loss 0.28403 | 1.649h
+  Epoch 148 | iter 1000 | loss 0.31428 | 1.656h
+  Epoch 149 | iter 0 | loss 0.32985 | 1.660h
+  Epoch 149 | iter 1000 | loss 0.22377 | 1.667h
+  Epoch 150 | iter 0 | loss 0.56426 | 1.671h
+  Epoch 150 | iter 1000 | loss 0.34434 | 1.678h
+  Epoch 151 | iter 0 | loss 0.33480 | 1.682h
+  Epoch 151 | iter 1000 | loss 0.22255 | 1.689h
+  Epoch 152 | iter 0 | loss 0.31547 | 1.693h
+  Epoch 152 | iter 1000 | loss 0.25056 | 1.701h
+  Epoch 153 | iter 0 | loss 0.29928 | 1.705h
+  Epoch 153 | iter 1000 | loss 0.30506 | 1.712h
+  Epoch 154 | iter 0 | loss 0.28676 | 1.716h
+  Epoch 154 | iter 1000 | loss 0.25665 | 1.723h
+  Epoch 155 | iter 0 | loss 0.23440 | 1.728h
+  Epoch 155 | iter 1000 | loss 0.41637 | 1.735h
+  Epoch 156 | iter 0 | loss 0.17574 | 1.739h
+  Epoch 156 | iter 1000 | loss 0.29047 | 1.746h
+  Epoch 157 | iter 0 | loss 0.19821 | 1.750h
+  Epoch 157 | iter 1000 | loss 0.26949 | 1.757h
+  Epoch 158 | iter 0 | loss 0.41145 | 1.761h
+  Epoch 158 | iter 1000 | loss 0.34544 | 1.769h
+  Epoch 159 | iter 0 | loss 0.30452 | 1.773h
+  Epoch 159 | iter 1000 | loss 0.27891 | 1.780h
+  Epoch 160 | iter 0 | loss 0.17273 | 1.784h
+  Epoch 160 | iter 1000 | loss 0.28721 | 1.791h
+  Epoch 161 | iter 0 | loss 0.33664 | 1.795h
+  Epoch 161 | iter 1000 | loss 0.23202 | 1.802h
+  Epoch 162 | iter 0 | loss 0.27721 | 1.806h
+  Epoch 162 | iter 1000 | loss 0.27523 | 1.813h
+  Epoch 163 | iter 0 | loss 0.27764 | 1.817h
+  Epoch 163 | iter 1000 | loss 0.25630 | 1.825h
+  Epoch 164 | iter 0 | loss 0.23947 | 1.829h
+  Epoch 164 | iter 1000 | loss 0.27203 | 1.836h
+  Epoch 165 | iter 0 | loss 0.48533 | 1.840h
+  Epoch 165 | iter 1000 | loss 0.18160 | 1.846h
+  Epoch 166 | iter 0 | loss 0.26028 | 1.850h
+  Epoch 166 | iter 1000 | loss 0.23703 | 1.858h
+  Epoch 167 | iter 0 | loss 0.26741 | 1.862h
+  Epoch 167 | iter 1000 | loss 0.21953 | 1.869h
+  Epoch 168 | iter 0 | loss 0.44953 | 1.873h
+  Epoch 168 | iter 1000 | loss 0.21223 | 1.881h
+  Epoch 169 | iter 0 | loss 0.33640 | 1.885h
+  Epoch 169 | iter 1000 | loss 0.26806 | 1.892h
+  Epoch 170 | iter 0 | loss 0.26705 | 1.897h
+  Epoch 170 | iter 1000 | loss 0.32149 | 1.904h
+  Epoch 171 | iter 0 | loss 0.26800 | 1.908h
+  Epoch 171 | iter 1000 | loss 0.25651 | 1.915h
+  Epoch 172 | iter 0 | loss 0.28276 | 1.919h
+  Epoch 172 | iter 1000 | loss 0.26112 | 1.926h
+  Epoch 173 | iter 0 | loss 0.32812 | 1.930h
+  Epoch 173 | iter 1000 | loss 0.31690 | 1.938h
+  Epoch 174 | iter 0 | loss 0.20693 | 1.942h
+  Epoch 174 | iter 1000 | loss 0.22727 | 1.949h
+  Epoch 175 | iter 0 | loss 0.24035 | 1.953h
+  Epoch 175 | iter 1000 | loss 0.19895 | 1.961h
+  Epoch 176 | iter 0 | loss 0.25168 | 1.965h
+  Epoch 176 | iter 1000 | loss 0.25997 | 1.972h
+  Epoch 177 | iter 0 | loss 0.17207 | 1.976h
+  Epoch 177 | iter 1000 | loss 0.36466 | 1.983h
+  Epoch 178 | iter 0 | loss 0.19322 | 1.987h
+  Epoch 178 | iter 1000 | loss 0.25163 | 1.995h
+  Epoch 179 | iter 0 | loss 0.29538 | 1.999h
+  Epoch 179 | iter 1000 | loss 0.24598 | 2.006h
+  Epoch 180 | iter 0 | loss 0.37936 | 2.010h
+  Epoch 180 | iter 1000 | loss 0.28386 | 2.017h
+  Epoch 181 | iter 0 | loss 0.43471 | 2.021h
+  Epoch 181 | iter 1000 | loss 0.33757 | 2.029h
+  Epoch 182 | iter 0 | loss 0.28480 | 2.033h
+  Epoch 182 | iter 1000 | loss 0.30693 | 2.040h
+  Epoch 183 | iter 0 | loss 0.16328 | 2.044h
+  Epoch 183 | iter 1000 | loss 0.16896 | 2.051h
+  Epoch 184 | iter 0 | loss 0.21281 | 2.055h
+  Epoch 184 | iter 1000 | loss 0.22573 | 2.063h
+  Epoch 185 | iter 0 | loss 0.38387 | 2.067h
+  Epoch 185 | iter 1000 | loss 0.26067 | 2.074h
+  Epoch 186 | iter 0 | loss 0.25574 | 2.078h
+  Epoch 186 | iter 1000 | loss 0.41906 | 2.085h
+  Epoch 187 | iter 0 | loss 0.38593 | 2.090h
+  Epoch 187 | iter 1000 | loss 0.29960 | 2.097h
+  Epoch 188 | iter 0 | loss 0.20189 | 2.101h
+  Epoch 188 | iter 1000 | loss 0.21963 | 2.108h
+  Epoch 189 | iter 0 | loss 0.25363 | 2.112h
+  Epoch 189 | iter 1000 | loss 0.29885 | 2.120h
+  Epoch 190 | iter 0 | loss 0.21967 | 2.124h
+  Epoch 190 | iter 1000 | loss 0.24386 | 2.131h
+  Epoch 191 | iter 0 | loss 0.22253 | 2.135h
+  Epoch 191 | iter 1000 | loss 0.23623 | 2.143h
+  Epoch 192 | iter 0 | loss 0.21353 | 2.147h
+  Epoch 192 | iter 1000 | loss 0.28800 | 2.154h
+  Epoch 193 | iter 0 | loss 0.30935 | 2.158h
+  Epoch 193 | iter 1000 | loss 0.24813 | 2.166h
+  Epoch 194 | iter 0 | loss 0.32001 | 2.170h
+  Epoch 194 | iter 1000 | loss 0.26512 | 2.177h
+  Epoch 195 | iter 0 | loss 0.25448 | 2.181h
+  Epoch 195 | iter 1000 | loss 0.20225 | 2.188h
+  Epoch 196 | iter 0 | loss 0.44779 | 2.192h
+  Epoch 196 | iter 1000 | loss 0.21728 | 2.199h
+  Epoch 197 | iter 0 | loss 0.25717 | 2.204h
+  Epoch 197 | iter 1000 | loss 0.20372 | 2.211h
+  Epoch 198 | iter 0 | loss 0.23303 | 2.215h
+  Epoch 198 | iter 1000 | loss 0.26309 | 2.222h
+  Epoch 199 | iter 0 | loss 0.32694 | 2.227h
+  Epoch 199 | iter 1000 | loss 0.24351 | 2.234h
+  Epoch 200 | iter 0 | loss 0.23076 | 2.238h
+  Epoch 200 | iter 1000 | loss 0.25523 | 2.245h
+--- Entrenamiento finalizado ---
+Modelo final guardado en: /mnt/frareuirod3/DeepTTA-TFG/Experimentos/exp_MLP_Random95_ReduceLROnPlateau_20260509_142114/model.pt
+======================================================================
+EXPERIMENTO COMPLETADO
+Resultados en: /mnt/frareuirod3/DeepTTA-TFG/Experimentos/exp_MLP_Random95_ReduceLROnPlateau_20260509_142114
+======================================================================

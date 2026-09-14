@@ -1,0 +1,24 @@
+{
+    "descripcion": "DAE Random95 ReduceLR noise0.1 – seed 2",
+    "model_type": "DAE",
+    "data_split": "Random95",
+    "random_seed": 2,
+    "pretrain_epochs": 100,
+    "pretrain_lr": 0.001,
+    "noise_factor": 0.1,
+    "pretrain_batch": 64,
+    "dae_hidden_dims": [
+        1024,
+        512
+    ],
+    "dae_latent_dim": 256,
+    "dae_dropout": 0.3,
+    "train_epochs": 200,
+    "train_lr": 0.0001,
+    "weight_decay": 0,
+    "batch_size": 64,
+    "scheduler": "ReduceLROnPlateau",
+    "scheduler_patience": 10,
+    "scheduler_factor": 0.5,
+    "scheduler_T_max": 200
+}
