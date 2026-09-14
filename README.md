@@ -1,40 +1,68 @@
-# DeepTTA - Adaptación y evaluación para reposicionamiento farmacológico
+# DeepTTA-DAE: Mejora del codificador transcriptómico en DeepTTA
 
-Este repositorio contiene el código y configuraciones utilizadas en el Trabajo de Fin de Grado:
+Este repositorio contiene el código y experimentos del Trabajo Fin de Máster:
 
-**" Avances en Inteligencia Artificial en elcontexto del reposicionamiento de fármacos"**
+**"Data science en reposicionamiento de fármacos: deep learning e integración de 
+información"**
 
-El objetivo ha sido reproducir, analizar y evaluar el modelo DeepTTA [1], un sistema híbrido basado en Transformers y codificaciones químicas (ESPF), aplicado a la predicción de la sensibilidad celular a compuestos antitumorales.
+Extiende un TFG previo centrado en DeepTTA [1], sustituyendo su codificador
+transcriptómico (MLP) por un **Denoising AutoEncoder (DAE)** preentrenado de
+forma no supervisada, validado mediante 9 experimentos y un caso de estudio
+en glioblastoma.
 
 ---
 
-## 🔍 Resumen del proyecto
+## 🔍 Resumen
 
-- **Modelo estudiado:** DeepTTA (Transformer + MLP + codificación ESPF)
-- **Datos utilizados:** Perfiles de expresión génica y estructuras moleculares (SMILES) del consorcio GDSC
-- **Aportaciones principales:**
-  - ✅ Reproducción funcional del modelo original en entorno local.
-  - ⚖️ Diseño de particiones de datos balanceadas (`ByCancerEquilibrado`, `ByDrugEquilibrado`).
-  - 📈 Visualización de resultados por tipo de cáncer y por fármaco.
+- **Modelo base:** DeepTTA (Transformer + MLP + codificación ESPF) [1]
+- **Propuesta:** MLP → DAE preentrenado sobre los perfiles de expresión génica
+- **Datos:** GDSC2 (103.492 pares célula-fármaco, 805 líneas celulares, 154 fármacos)
+- **Resultados:**
+  - ✅ Mejora consistente del DAE sobre el MLP (MSE, Pearson, Spearman, CI),
+    bajo dos particiones (ByCancer 80/20 y Random 95/5), estadísticamente
+    significativa (test de Wilcoxon, $p<0.001$)
+  - ✅ Caso de estudio en glioblastoma validado frente a literatura biomédica
+    y datos experimentales reales
 
-- Todos los resultados obtenidos (predicciones, métricas y gráficas) se encuentran organizados en las carpetas 'predicciones' y 'graficas_predicciones' respectivamente .
+Código y resultados organizados en `Experimentos/`, `Caso_estudio_GBM/`,
+`Analisis_Cancer/` y `Graficas_Comparativas/`.
+
+---
+
+## 🧬 Origen del código
+
+`model_helper.py`, `Step1_Cell_Stat.py`, `Step1_PubchemID2smile.py` y
+`Step2_DataEncoding.py` proceden sin modificaciones sustanciales del
+repositorio original de DeepTTA [1]. `dae_encoder.py`, `Step3_model_DAE.py`
+y `experimento.py` son aportación de este TFM.
+
 ---
 
 ## 📎 Notas
 
-Debido al tamaño de los archivos, estos archivos deben descargarse por separado:
+Por su tamaño, estos archivos deben descargarse por separado:
 
-1. Archivo con las características génicas de las líneas celulares: https://www.cancerrxgene.org/gdsc1000/GDSC1000_WebResources///Data/preprocessed/Cell_line_RMA_proc_basalExp.txt.zip
-2. Modelos entrenados: [https://drive.google.com/drive/u/2/folders/1JWLLyCYW1wWNZBEsflt4l8aSdRoga72K](https://drive.google.com/file/d/1J5kJnznJ6JOSaDzutiu4XJI9GDGsbaco/view?usp=drive_link) cuyas informaciones están en la carpeta Registro_Modelos
+1. Expresión génica de líneas celulares:
+   https://www.cancerrxgene.org/gdsc1000/GDSC1000_WebResources///Data/preprocessed/Cell_line_RMA_proc_basalExp.txt.zip
+2. Datos de glioblastoma (Neftel et al. [2]):
+   https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE131928
+3. Pesos de los modelos entrenados (`.pt`, excluidos por tamaño): pueden
+   regenerarse con `experimento.py` y el `config.json` de cada experimento
+   en `Experimentos/`, o solicitarse al autor.
 
-Este proyecto es un estudio académico del modelo original DeepTTA [1] y se presenta como parte del Trabajo Fin de Grado (TFG) para la obtención del título en la carrera de Ingeniería de la Salud, mención Informática Clínica, por la Universidad de Sevilla. El código se ha reestructurado para facilitar la comprensión, experimentación y evaluación del modelo en un entorno reproducible, así como adaptado para una serie de experimentos que se presentan en la memoria del TFG presentado.
- 
-This project is an academic study of the original DeepTTA model [1]. It is presented as part of the bachelor thesis (TFG) in the degree of Ingeniería de la Salud - Informática Clínica in the  University of Seville. The code has been restructured to facilitate the understanding, experimentation and evaluation of the model in a 
-reproducible environment, as well as adapted for a series of experiments that are presented in the memory of the bachelor thesis.
- 
-[1] Likun Jiang, Changzhi Jiang, Xinyu Yu, Rao Fu, Shuting Jin, Xiangrong Liu, DeepTTA: a transformer-based model for predicting cancer drug response, Briefings in Bioinformatics, Volume 23, Issue 3, May 2022, bbac100, https://doi.org/10.1093/bib/bbac100. Enlace: https://academic.oup.com/bib/article/23/3/bbac100/6554594 
+Este proyecto se presenta como Trabajo Fin de Máster en Ingeniería del
+Software: Cloud, Datos y Gestión TI, Universidad de Sevilla.
 
+[1] Jiang, L., Jiang, C., Yu, X., Fu, R., Jin, S., & Liu, X. (2022). DeepTTA:
+a transformer-based model for predicting cancer drug response. *Briefings in
+Bioinformatics*, 23(3), bbac100. https://doi.org/10.1093/bib/bbac100
+
+[2] Neftel, C., Laffy, J., Filbin, M. G., et al. (2019). An Integrative Model
+of Cellular States, Plasticity, and Genetics for Glioblastoma. *Cell*,
+178(4), 835-849. https://doi.org/10.1016/j.cell.2019.06.024
+
+---
 
 Francisco Javier Ruiz Rodríguez
-Grado en Ingeniería de la Salud – mención en Informática Clínica
-Universidad de Sevilla, 2025
+Máster en Ingeniería del Software: Cloud, Datos y Gestión TI
+Universidad de Sevilla, 2026
